@@ -4,1022 +4,443 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mamadou Khaly Sylla — Stratégie Commerciale & Marketing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<title>Mamadou Khaly Sylla</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #050508;
-    --surface: #0d0d14;
-    --surface2: #12121c;
-    --border: rgba(255,255,255,0.07);
-    --accent: #c8a96e;
-    --accent2: #7b68ee;
-    --accent-glow: rgba(200,169,110,0.15);
-    --text: #e8e6e0;
-    --muted: #6b6a72;
-    --white: #ffffff;
-  }
-
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; font-size: 16px; }
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-background: var(–bg);
-color: var(–text);
-font-family: ‘DM Sans’, sans-serif;
-font-weight: 300;
-line-height: 1.7;
-overflow-x: hidden;
-cursor: none;
+  background: #050508;
+  color: #e8e6e0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-/* Custom cursor */
-.cursor {
-width: 12px; height: 12px;
-background: var(–accent);
-border-radius: 50%;
-position: fixed; pointer-events: none;
-z-index: 9999;
-transform: translate(-50%, -50%);
-transition: transform 0.1s ease, width 0.2s, height 0.2s, background 0.2s;
-mix-blend-mode: screen;
-}
-.cursor-follower {
-width: 36px; height: 36px;
-border: 1px solid rgba(200,169,110,0.4);
-border-radius: 50%;
-position: fixed; pointer-events: none;
-z-index: 9998;
-transform: translate(-50%, -50%);
-transition: transform 0.15s ease, width 0.3s, height 0.3s, opacity 0.3s;
-}
-body:hover .cursor { opacity: 1; }
-a:hover ~ .cursor, button:hover ~ .cursor { transform: translate(-50%,-50%) scale(2.5); }
-
-/* Noise overlay */
-body::before {
-content: ‘’;
-position: fixed; inset: 0;
-background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’ opacity=‘0.04’/%3E%3C/svg%3E”);
-pointer-events: none; z-index: 1000; opacity: 0.35;
-}
-
-/* ─── NAV ─── */
+/* NAV */
 nav {
 position: fixed; top: 0; left: 0; right: 0;
 z-index: 500;
 display: flex; align-items: center; justify-content: space-between;
-padding: 1.5rem 4rem;
+padding: 1.5rem 2rem;
+background: rgba(5,5,8,0.9);
 backdrop-filter: blur(20px);
-border-bottom: 1px solid transparent;
-transition: border-color 0.3s, background 0.3s;
-}
-nav.scrolled {
-border-color: var(–border);
-background: rgba(5,5,8,0.85);
+border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 .nav-logo {
 font-family: ‘Syne’, sans-serif;
-font-weight: 800;
-font-size: 1.1rem;
-letter-spacing: 0.05em;
-color: var(–white);
-text-decoration: none;
+font-weight: 800; font-size: 1.1rem;
+color: #fff; text-decoration: none;
 }
-.nav-logo span { color: var(–accent); }
-.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-logo span { color: #c8a96e; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
 .nav-links a {
-color: var(–muted);
-text-decoration: none;
-font-size: 0.85rem;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-transition: color 0.2s;
-position: relative;
+color: #6b6a72; text-decoration: none;
+font-size: 0.8rem; letter-spacing: 0.08em;
+text-transform: uppercase; transition: color 0.2s;
 }
-.nav-links a::after {
-content: ‘’;
-position: absolute; left: 0; bottom: -3px;
-width: 0; height: 1px;
-background: var(–accent);
-transition: width 0.3s;
-}
-.nav-links a:hover { color: var(–white); }
-.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { color: #c8a96e; }
 
-/* ─── HERO ─── */
+/* HERO */
 #hero {
 min-height: 100vh;
 display: flex; align-items: center;
-padding: 0 4rem;
+padding: 8rem 2rem 4rem;
 position: relative;
-overflow: hidden;
+background: #050508;
 }
 .hero-bg {
 position: absolute; inset: 0;
-background:
-radial-gradient(ellipse 60% 60% at 70% 50%, rgba(200,169,110,0.07) 0%, transparent 70%),
-radial-gradient(ellipse 40% 40% at 20% 80%, rgba(123,104,238,0.05) 0%, transparent 60%);
-}
-.hero-grid {
-position: absolute; inset: 0;
-background-image:
-linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-background-size: 80px 80px;
-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
-}
-.hero-content {
-position: relative; z-index: 2;
-max-width: 900px;
+background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(200,169,110,0.08) 0%, transparent 70%);
+pointer-events: none;
 }
 .hero-eyebrow {
-display: inline-flex; align-items: center; gap: 0.75rem;
-font-size: 0.75rem;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(–accent);
-margin-bottom: 2rem;
-opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+display: inline-flex; align-items: center; gap: 0.6rem;
+font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+color: #c8a96e; margin-bottom: 1.5rem;
 }
-.hero-eyebrow::before {
-content: ‘’;
-display: block; width: 32px; height: 1px;
-background: var(–accent);
-}
+.hero-eyebrow::before { content: ‘’; display: block; width: 24px; height: 1px; background: #c8a96e; }
 .hero-name {
 font-family: ‘Syne’, sans-serif;
 font-weight: 800;
-font-size: clamp(3.5rem, 8vw, 7rem);
+font-size: clamp(3rem, 12vw, 6rem);
 line-height: 0.95;
 letter-spacing: -0.03em;
-color: var(–white);
-margin-bottom: 1rem;
-opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+color: #fff;
+margin-bottom: 0.5rem;
 }
-.hero-name .highlight {
+.hero-name .outline {
 color: transparent;
--webkit-text-stroke: 1px var(–accent);
+-webkit-text-stroke: 1px #c8a96e;
 display: block;
 }
 .hero-tagline {
-font-size: clamp(1rem, 2vw, 1.25rem);
-color: var(–muted);
-max-width: 520px;
-margin-bottom: 3rem;
-opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
-font-style: italic;
+font-size: 1rem; color: #6b6a72;
+max-width: 420px; margin-bottom: 2.5rem;
+font-style: italic; line-height: 1.6;
 }
-.hero-ctas {
-display: flex; gap: 1rem; flex-wrap: wrap;
-opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
-}
-.btn-primary {
-display: inline-flex; align-items: center; gap: 0.5rem;
-padding: 0.85rem 2rem;
-background: var(–accent);
-color: var(–bg);
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-gold {
+display: inline-block;
+padding: 0.85rem 1.8rem;
+background: #c8a96e; color: #050508;
 font-family: ‘Syne’, sans-serif;
-font-weight: 700;
-font-size: 0.85rem;
-letter-spacing: 0.08em;
-text-transform: uppercase;
-text-decoration: none;
-border: none; cursor: none;
-transition: transform 0.2s, box-shadow 0.2s;
-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+font-weight: 700; font-size: 0.82rem;
+letter-spacing: 0.08em; text-transform: uppercase;
+text-decoration: none; border: none;
+transition: opacity 0.2s, transform 0.2s;
 }
-.btn-primary:hover {
-transform: translateY(-2px);
-box-shadow: 0 12px 40px rgba(200,169,110,0.3);
-}
-.btn-outline {
-display: inline-flex; align-items: center; gap: 0.5rem;
-padding: 0.85rem 2rem;
-background: transparent;
-color: var(–text);
+.btn-gold:hover { opacity: 0.85; transform: translateY(-2px); }
+.btn-border {
+display: inline-block;
+padding: 0.85rem 1.8rem;
+background: transparent; color: #e8e6e0;
 font-family: ‘Syne’, sans-serif;
-font-weight: 600;
-font-size: 0.85rem;
-letter-spacing: 0.08em;
-text-transform: uppercase;
+font-weight: 600; font-size: 0.82rem;
+letter-spacing: 0.08em; text-transform: uppercase;
 text-decoration: none;
-border: 1px solid var(–border);
-cursor: none;
-transition: border-color 0.2s, color 0.2s, transform 0.2s;
-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+border: 1px solid rgba(255,255,255,0.15);
+transition: border-color 0.2s, color 0.2s;
 }
-.btn-outline:hover {
-border-color: var(–accent);
-color: var(–accent);
-transform: translateY(-2px);
-}
-.hero-scroll {
-position: absolute; bottom: 3rem; left: 50%;
-transform: translateX(-50%);
-display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-color: var(–muted); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
-opacity: 0; animation: fadeUp 0.8s 1.2s forwards;
-}
-.scroll-line {
-width: 1px; height: 48px;
-background: linear-gradient(to bottom, var(–accent), transparent);
-animation: scrollPulse 2s ease-in-out infinite;
-}
+.btn-border:hover { border-color: #c8a96e; color: #c8a96e; }
 
-/* ─── SECTION BASE ─── */
-section { padding: 7rem 4rem; position: relative; }
-.section-label {
-display: inline-flex; align-items: center; gap: 0.75rem;
-font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
-color: var(–accent); margin-bottom: 1rem;
+/* SECTIONS */
+section { padding: 5rem 2rem; }
+.label {
+display: inline-flex; align-items: center; gap: 0.6rem;
+font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+color: #c8a96e; margin-bottom: 0.75rem;
 }
-.section-label::before {
-content: ‘’; display: block; width: 24px; height: 1px; background: var(–accent);
-}
+.label::before { content: ‘’; display: block; width: 20px; height: 1px; background: #c8a96e; }
 .section-title {
 font-family: ‘Syne’, sans-serif;
 font-weight: 800;
-font-size: clamp(2.2rem, 4vw, 3.5rem);
+font-size: clamp(2rem, 7vw, 3rem);
 line-height: 1.05;
 letter-spacing: -0.02em;
-color: var(–white);
-margin-bottom: 4rem;
+color: #fff; margin-bottom: 3rem;
 }
 .section-title em {
 color: transparent;
--webkit-text-stroke: 1px rgba(255,255,255,0.3);
+-webkit-text-stroke: 1px rgba(255,255,255,0.25);
 font-style: normal;
 }
 
-/* ─── ABOUT ─── */
-#about { background: var(–surface); }
-.about-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 5rem;
-align-items: center;
-max-width: 1100px;
-}
-.about-photo-wrap {
-position: relative;
-}
-.about-photo {
-width: 100%; aspect-ratio: 4/5;
-background: var(–surface2);
-border: 1px solid var(–border);
-overflow: hidden;
-position: relative;
-}
-.about-photo img {
-width: 100%; height: 100%; object-fit: cover;
-filter: grayscale(20%) contrast(1.05);
-transition: filter 0.4s;
-}
-.about-photo:hover img { filter: grayscale(0%) contrast(1.1); }
-.about-photo::after {
-content: ‘’;
-position: absolute; inset: 0;
-background: linear-gradient(to bottom, transparent 60%, rgba(5,5,8,0.6) 100%);
-}
-.about-badge {
-position: absolute;
-bottom: -1.5rem; right: -1.5rem;
-width: 100px; height: 100px;
-background: var(–accent);
-display: flex; align-items: center; justify-content: center;
-flex-direction: column;
-gap: 0.1rem;
-clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
-}
-.about-badge span:first-child {
-font-family: ‘Syne’, sans-serif;
-font-weight: 800; font-size: 1.8rem; line-height: 1;
-color: var(–bg);
-}
-.about-badge span:last-child {
-font-size: 0.6rem; letter-spacing: 0.1em;
-text-transform: uppercase; color: rgba(5,5,8,0.7);
-}
-.about-text p { color: var(–muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
-.about-text p strong { color: var(–text); font-weight: 500; }
-.about-stats {
-display: flex; gap: 2rem; margin-top: 2.5rem; padding-top: 2.5rem;
-border-top: 1px solid var(–border);
-}
-.stat { flex: 1; }
-.stat-num {
-font-family: ‘Syne’, sans-serif;
-font-weight: 800; font-size: 2rem;
-color: var(–accent); line-height: 1;
-margin-bottom: 0.25rem;
-}
-.stat-label { font-size: 0.75rem; color: var(–muted); letter-spacing: 0.05em; }
+/* ABOUT */
+#about { background: #0d0d14; }
+.about-text p { color: #6b6a72; margin-bottom: 1.2rem; font-size: 1rem; }
+.about-text p strong { color: #e8e6e0; font-weight: 500; }
+.stats { display: flex; gap: 2rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07); flex-wrap: wrap; }
+.stat-num { font-family: ‘Syne’, sans-serif; font-weight: 800; font-size: 1.8rem; color: #c8a96e; line-height: 1; }
+.stat-lbl { font-size: 0.72rem; color: #6b6a72; margin-top: 0.2rem; }
 
-/* ─── SKILLS ─── */
-#skills { background: var(–bg); }
-.skills-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 1.5px;
-max-width: 1100px;
-background: var(–border);
-border: 1px solid var(–border);
-}
-.skill-card {
-background: var(–bg);
-padding: 2.5rem;
-transition: background 0.3s;
-position: relative;
-overflow: hidden;
-}
-.skill-card::before {
-content: ‘’;
-position: absolute; inset: 0;
-background: linear-gradient(135deg, var(–accent-glow), transparent 60%);
-opacity: 0;
-transition: opacity 0.3s;
-}
-.skill-card:hover { background: var(–surface); }
-.skill-card:hover::before { opacity: 1; }
-.skill-icon {
-width: 48px; height: 48px;
-background: var(–surface2);
-display: flex; align-items: center; justify-content: center;
-margin-bottom: 1.5rem;
-font-size: 1.5rem;
-border: 1px solid var(–border);
-clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
-}
-.skill-name {
-font-family: ‘Syne’, sans-serif;
-font-weight: 700; font-size: 1rem;
-color: var(–white); margin-bottom: 0.75rem;
-letter-spacing: 0.02em;
-}
-.skill-desc { font-size: 0.85rem; color: var(–muted); line-height: 1.6; }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
-.tag {
-padding: 0.2rem 0.6rem;
-background: var(–surface2);
-border: 1px solid var(–border);
-font-size: 0.7rem; letter-spacing: 0.05em;
-color: var(–muted);
-text-transform: uppercase;
-}
+/* SKILLS */
+#skills { background: #050508; }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.07); }
+.skill-card { background: #050508; padding: 1.5rem; transition: background 0.3s; }
+.skill-card:hover { background: #0d0d14; }
+.skill-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+.skill-name { font-family: ‘Syne’, sans-serif; font-weight: 700; font-size: 0.9rem; color: #fff; margin-bottom: 0.4rem; }
+.skill-desc { font-size: 0.78rem; color: #6b6a72; line-height: 1.5; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.75rem; }
+.tag { padding: 0.15rem 0.5rem; background: #12121c; border: 1px solid rgba(255,255,255,0.07); font-size: 0.65rem; color: #6b6a72; text-transform: uppercase; letter-spacing: 0.04em; }
 
-/* ─── PROJECTS ─── */
-#projects { background: var(–surface); }
-.projects-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-gap: 1px;
-background: var(–border);
-border: 1px solid var(–border);
-max-width: 1100px;
-}
-.project-card {
-background: var(–surface);
-position: relative;
-overflow: hidden;
-cursor: none;
-group: true;
-}
-.project-card-inner { padding: 2.5rem; position: relative; z-index: 2; }
-.project-card::before {
-content: ‘’;
-position: absolute; bottom: 0; left: 0; right: 0;
-height: 3px;
-background: linear-gradient(90deg, var(–accent), var(–accent2));
-transform: scaleX(0); transform-origin: left;
-transition: transform 0.4s cubic-bezier(.25,.46,.45,.94);
-}
-.project-card:hover::before { transform: scaleX(1); }
-.project-card-bg {
-position: absolute; inset: 0;
-background: linear-gradient(135deg, rgba(200,169,110,0.04) 0%, transparent 60%);
-opacity: 0; transition: opacity 0.3s;
-}
-.project-card:hover .project-card-bg { opacity: 1; }
-.project-num {
-font-family: ‘Syne’, sans-serif;
-font-weight: 800; font-size: 3.5rem;
-color: transparent; -webkit-text-stroke: 1px var(–border);
-line-height: 1; margin-bottom: 1.5rem;
-transition: -webkit-text-stroke 0.3s;
-}
-.project-card:hover .project-num { -webkit-text-stroke-color: var(–accent); }
-.project-title {
-font-family: ‘Syne’, sans-serif;
-font-weight: 700; font-size: 1.1rem;
-color: var(–white); margin-bottom: 0.5rem;
-}
-.project-company {
-font-size: 0.75rem; text-transform: uppercase;
-letter-spacing: 0.1em; color: var(–accent);
-margin-bottom: 1rem;
-}
-.project-desc { font-size: 0.9rem; color: var(–muted); line-height: 1.7; }
-.project-arrow {
-display: inline-flex; align-items: center; gap: 0.4rem;
-margin-top: 1.5rem;
-font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
-color: var(–muted);
-transition: color 0.2s, gap 0.2s;
-}
-.project-card:hover .project-arrow { color: var(–accent); gap: 0.6rem; }
+/* PROJECTS */
+#projects { background: #0d0d14; }
+.proj-card { border: 1px solid rgba(255,255,255,0.07); padding: 2rem; margin-bottom: 1px; background: #0d0d14; position: relative; overflow: hidden; transition: background 0.3s; }
+.proj-card::after { content: ‘’; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #c8a96e, #7b68ee); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.proj-card:hover { background: #12121c; }
+.proj-card:hover::after { transform: scaleX(1); }
+.proj-num { font-family: ‘Syne’, sans-serif; font-weight: 800; font-size: 2.5rem; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.1); line-height: 1; margin-bottom: 1rem; }
+.proj-company { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #c8a96e; margin-bottom: 0.4rem; }
+.proj-title { font-family: ‘Syne’, sans-serif; font-weight: 700; font-size: 1rem; color: #fff; margin-bottom: 0.6rem; }
+.proj-desc { font-size: 0.85rem; color: #6b6a72; line-height: 1.6; }
 
-/* ─── EXPERIENCE ─── */
-#experience { background: var(–bg); }
-.timeline { max-width: 800px; position: relative; }
-.timeline::before {
-content: ‘’;
-position: absolute; left: 0; top: 0; bottom: 0;
-width: 1px; background: var(–border);
-}
-.timeline-item {
-padding-left: 3rem;
-padding-bottom: 3.5rem;
-position: relative;
-opacity: 0; transform: translateX(-20px);
-transition: opacity 0.6s, transform 0.6s;
-}
-.timeline-item.visible { opacity: 1; transform: translateX(0); }
-.timeline-dot {
-position: absolute; left: -5px; top: 6px;
-width: 11px; height: 11px;
-background: var(–bg);
-border: 2px solid var(–accent);
-border-radius: 50%;
-}
-.timeline-dot::after {
-content: ‘’;
-position: absolute; inset: -4px;
-border-radius: 50%;
-background: var(–accent-glow);
-opacity: 0;
-transition: opacity 0.3s;
-}
-.timeline-item:hover .timeline-dot::after { opacity: 1; }
-.timeline-date {
-font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
-color: var(–accent); margin-bottom: 0.5rem;
-}
-.timeline-role {
-font-family: ‘Syne’, sans-serif;
-font-weight: 700; font-size: 1.1rem;
-color: var(–white); margin-bottom: 0.25rem;
-}
-.timeline-company {
-font-size: 0.85rem; color: var(–muted); margin-bottom: 1rem;
-}
-.timeline-bullets { list-style: none; }
-.timeline-bullets li {
-font-size: 0.9rem; color: var(–muted);
-padding: 0.3rem 0 0.3rem 1rem;
-position: relative;
-}
-.timeline-bullets li::before {
-content: ‘—’;
-position: absolute; left: 0;
-color: var(–accent); font-size: 0.8em;
-}
+/* EXPERIENCE */
+#experience { background: #050508; }
+.timeline { position: relative; padding-left: 2rem; }
+.timeline::before { content: ‘’; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.07); }
+.tl-item { padding-bottom: 3rem; position: relative; }
+.tl-dot { position: absolute; left: -2.35rem; top: 5px; width: 10px; height: 10px; background: #050508; border: 2px solid #c8a96e; border-radius: 50%; }
+.tl-date { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #c8a96e; margin-bottom: 0.4rem; }
+.tl-role { font-family: ‘Syne’, sans-serif; font-weight: 700; font-size: 1rem; color: #fff; margin-bottom: 0.2rem; }
+.tl-company { font-size: 0.82rem; color: #6b6a72; margin-bottom: 0.8rem; }
+.tl-bullets { list-style: none; }
+.tl-bullets li { font-size: 0.85rem; color: #6b6a72; padding: 0.25rem 0 0.25rem 1rem; position: relative; }
+.tl-bullets li::before { content: ‘—’; position: absolute; left: 0; color: #c8a96e; font-size: 0.75em; }
 
-/* ─── EDUCATION ─── */
-#education {
-background: var(–surface);
-padding: 7rem 4rem;
-}
-.edu-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 1px;
-max-width: 1100px;
-background: var(–border);
-border: 1px solid var(–border);
-}
-.edu-card {
-background: var(–surface);
-padding: 2.5rem;
-position: relative; overflow: hidden;
-transition: background 0.3s;
-}
-.edu-card:hover { background: var(–surface2); }
-.edu-year {
-font-family: ‘Syne’, sans-serif;
-font-weight: 800; font-size: 0.7rem;
-letter-spacing: 0.2em; text-transform: uppercase;
-color: var(–accent); margin-bottom: 1rem;
-}
-.edu-degree {
-font-family: ‘Syne’, sans-serif;
-font-weight: 700; font-size: 1rem;
-color: var(–white); margin-bottom: 0.4rem; line-height: 1.3;
-}
-.edu-school { font-size: 0.85rem; color: var(–muted); margin-bottom: 1rem; }
-.edu-detail { font-size: 0.82rem; color: var(–muted); line-height: 1.6; }
+/* EDUCATION */
+#education { background: #0d0d14; }
+.edu-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.07); }
+.edu-card { background: #0d0d14; padding: 1.75rem; transition: background 0.3s; }
+.edu-card:hover { background: #12121c; }
+.edu-year { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: #c8a96e; margin-bottom: 0.5rem; }
+.edu-degree { font-family: ‘Syne’, sans-serif; font-weight: 700; font-size: 0.95rem; color: #fff; margin-bottom: 0.3rem; line-height: 1.3; }
+.edu-school { font-size: 0.82rem; color: #6b6a72; }
 
-/* ─── CONTACT ─── */
-#contact {
-background: var(–bg);
-min-height: 80vh;
-display: flex; align-items: center;
-}
-.contact-wrap { max-width: 1100px; width: 100%; }
-.contact-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 5rem;
-}
-.contact-info { padding-top: 1rem; }
-.contact-subtitle { font-size: 1.05rem; color: var(–muted); max-width: 400px; margin-bottom: 3rem; }
-.contact-item {
-display: flex; align-items: center; gap: 1rem;
-padding: 1.25rem 0;
-border-bottom: 1px solid var(–border);
-}
-.contact-item-icon {
-width: 40px; height: 40px;
-background: var(–surface);
-border: 1px solid var(–border);
-display: flex; align-items: center; justify-content: center;
-font-size: 1rem; flex-shrink: 0;
-}
-.contact-item-text { font-size: 0.9rem; color: var(–text); }
-.contact-item-label { font-size: 0.7rem; color: var(–muted); letter-spacing: 0.1em; text-transform: uppercase; }
-.contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
-.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-.form-label {
-font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
-color: var(–muted);
-}
+/* CONTACT */
+#contact { background: #050508; }
+.contact-items { margin-bottom: 2.5rem; }
+.contact-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.contact-icon { width: 36px; height: 36px; background: #0d0d14; border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+.contact-lbl { font-size: 0.65rem; color: #6b6a72; letter-spacing: 0.1em; text-transform: uppercase; }
+.contact-val { font-size: 0.88rem; color: #e8e6e0; }
+.form { display: flex; flex-direction: column; gap: 1rem; }
+.form-lbl { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: #6b6a72; margin-bottom: 0.3rem; display: block; }
 .form-input, .form-textarea {
-background: var(–surface);
-border: 1px solid var(–border);
-color: var(–text);
-font-family: ‘DM Sans’, sans-serif;
-font-size: 0.95rem;
-padding: 0.85rem 1rem;
-outline: none;
-transition: border-color 0.2s, background 0.2s;
-resize: none;
+width: 100%; background: #0d0d14; border: 1px solid rgba(255,255,255,0.07);
+color: #e8e6e0; font-family: ‘DM Sans’, sans-serif; font-size: 0.9rem;
+padding: 0.8rem 1rem; outline: none; transition: border-color 0.2s;
 }
-.form-input:focus, .form-textarea:focus {
-border-color: var(–accent);
-background: var(–surface2);
-}
-.form-textarea { min-height: 130px; }
-.form-input::placeholder, .form-textarea::placeholder { color: var(–muted); }
+.form-input:focus, .form-textarea:focus { border-color: #c8a96e; }
+.form-textarea { min-height: 110px; resize: none; }
+.form-input::placeholder, .form-textarea::placeholder { color: #6b6a72; }
 
-/* ─── FOOTER ─── */
-footer {
-padding: 2rem 4rem;
-border-top: 1px solid var(–border);
-display: flex; align-items: center; justify-content: space-between;
-flex-wrap: wrap; gap: 1rem;
-}
-.footer-logo {
-font-family: ‘Syne’, sans-serif;
-font-weight: 800; font-size: 1rem;
-color: var(–white); text-decoration: none;
-}
-.footer-logo span { color: var(–accent); }
-.footer-copy { font-size: 0.78rem; color: var(–muted); }
-.footer-links { display: flex; gap: 1.5rem; }
-.footer-links a {
-font-size: 0.78rem; color: var(–muted);
-text-decoration: none; letter-spacing: 0.05em;
-transition: color 0.2s;
-}
-.footer-links a:hover { color: var(–accent); }
-
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-from { opacity: 0; transform: translateY(30px); }
-to { opacity: 1; transform: translateY(0); }
-}
-@keyframes scrollPulse {
-0%, 100% { opacity: 0.3; height: 48px; }
-50% { opacity: 1; height: 32px; }
-}
-.reveal {
-opacity: 0; transform: translateY(40px);
-transition: opacity 0.7s cubic-bezier(.25,.46,.45,.94), transform 0.7s cubic-bezier(.25,.46,.45,.94);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 900px) {
-nav { padding: 1.25rem 2rem; }
-.nav-links { display: none; }
-section { padding: 5rem 2rem; }
-#hero { padding: 0 2rem; }
-.about-grid { grid-template-columns: 1fr; gap: 3rem; }
-.about-badge { right: 0; }
-.contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-footer { flex-direction: column; align-items: flex-start; padding: 2rem; }
-#education { padding: 5rem 2rem; }
-}
-@media print {
-.cursor, .cursor-follower, nav, .hero-scroll, #contact form { display: none !important; }
-body { cursor: auto; color: #111; background: white; }
-body::before { display: none; }
-section { padding: 3rem 2rem; }
-:root { –bg: white; –surface: #f5f5f5; –surface2: #ebebeb; –text: #222; –muted: #666; –white: #111; –border: #ddd; }
-.section-title, .hero-name { color: #111; }
-.hero-name .highlight { -webkit-text-stroke: 1px #c8a96e; }
-nav.scrolled { background: white; }
-a { color: inherit; }
-}
+/* FOOTER */
+footer { padding: 1.5rem 2rem; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; background: #050508; }
+.footer-logo { font-family: ‘Syne’, sans-serif; font-weight: 800; color: #fff; text-decoration: none; }
+.footer-logo span { color: #c8a96e; }
+.footer-copy { font-size: 0.75rem; color: #6b6a72; }
 </style>
 
 </head>
 <body>
 
-<!-- Custom cursor -->
-
-<div class="cursor" id="cursor"></div>
-<div class="cursor-follower" id="cursorFollower"></div>
-
-<!-- Navigation -->
-
-<nav id="navbar">
+<nav>
   <a href="#hero" class="nav-logo">MK<span>S</span></a>
   <ul class="nav-links">
     <li><a href="#about">Profil</a></li>
-    <li><a href="#skills">Compétences</a></li>
-    <li><a href="#projects">Projets</a></li>
     <li><a href="#experience">Parcours</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- Hero -->
+<!-- HERO -->
 
 <section id="hero">
   <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
+  <div>
     <div class="hero-eyebrow">Disponible dès Septembre 2026</div>
     <h1 class="hero-name">
       Mamadou Khaly<br>
-      <span class="highlight">Sylla</span>
+      <span class="outline">Sylla</span>
     </h1>
     <p class="hero-tagline">Stratégie Commerciale · Marketing Digital · Développement Business — L'ambition de transformer chaque contact en opportunité.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn-primary">Me contacter ↗</a>
-      <a href="#experience" class="btn-outline">Voir mon parcours</a>
+      <a href="#contact" class="btn-gold">Me contacter ↗</a>
+      <a href="#experience" class="btn-border">Mon parcours</a>
     </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
   </div>
 </section>
 
-<!-- About -->
+<!-- ABOUT -->
 
 <section id="about">
-  <div class="about-grid reveal">
-    <div class="about-photo-wrap">
-      <div class="about-photo">
-        <!-- Photo placeholder - remplace le src par ta vraie photo -->
-        <img src="https://via.placeholder.com/400x500/12121c/c8a96e?text=MKS" alt="Mamadou Khaly Sylla">
-      </div>
-      <div class="about-badge">
-        <span>4+</span>
-        <span>ans expér.</span>
-      </div>
-    </div>
-    <div class="about-text">
-      <div class="section-label">À propos</div>
-      <h2 class="section-title" style="margin-bottom:1.5rem;">Construire,<br><em>connecter,</em> développer.</h2>
-      <p>Étudiant en <strong>MBA Manager de la Stratégie Commerciale</strong> à CFA IMC (Groupe Randstad), je combineformations académiques d'excellence et expériences terrain pour forger un profil complet.</p>
-      <p>Diplômé de l'ESGCI Paris (Bachelor Marketing & Commerce, Titre RNCP Niveau 6), j'ai construit une expertise réelle en <strong>développement commercial, communication digitale et relation client</strong> — de Dakar à Paris, en passant par les Jeux Olympiques 2024.</p>
-      <p>Mon moteur : <strong>l'écoute active et l'orientation résultats.</strong> Je cherche une alternance dès septembre 2026 pour apporter une valeur concrète à une équipe ambitieuse.</p>
-      <div class="about-stats">
-        <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Personnes gérées / jour (JO 2024)</div></div>
-        <div class="stat"><div class="stat-num">2400</div><div class="stat-label">Références produits suivies</div></div>
-        <div class="stat"><div class="stat-num">B1</div><div class="stat-label">Anglais professionnel</div></div>
-      </div>
+  <div class="label">À propos</div>
+  <h2 class="section-title">Construire,<br><em>connecter,</em> développer.</h2>
+  <div class="about-text">
+    <p>Étudiant en <strong>MBA Manager de la Stratégie Commerciale</strong> à CFA IMC (Groupe Randstad), je combine formations académiques et expériences terrain pour forger un profil complet.</p>
+    <p>Diplômé de l'ESGCI Paris (Bachelor Marketing & Commerce, Titre RNCP Niveau 6), j'ai construit une expertise en <strong>développement commercial, communication digitale et relation client</strong> — de Dakar à Paris, en passant par les Jeux Olympiques 2024.</p>
+    <p>Mon moteur : <strong>l'écoute active et l'orientation résultats.</strong></p>
+    <div class="stats">
+      <div><div class="stat-num">500+</div><div class="stat-lbl">Spectateurs/jour (JO 2024)</div></div>
+      <div><div class="stat-num">2400</div><div class="stat-lbl">Références produits</div></div>
+      <div><div class="stat-num">4+</div><div class="stat-lbl">Ans d'expérience</div></div>
     </div>
   </div>
 </section>
 
-<!-- Skills -->
+<!-- SKILLS -->
 
 <section id="skills">
-  <div class="section-label reveal">Compétences</div>
-  <h2 class="section-title reveal">Mes <em>atouts</em><br>clés</h2>
-  <div class="skills-grid reveal">
+  <div class="label">Compétences</div>
+  <h2 class="section-title">Mes <em>atouts</em> clés</h2>
+  <div class="skills-grid">
     <div class="skill-card">
       <div class="skill-icon">📣</div>
-      <div class="skill-name">Communication Digitale</div>
-      <div class="skill-desc">Création de contenu, storytelling, gestion de réseaux sociaux, animation de communautés et calendrier éditorial.</div>
-      <div class="skill-tags">
-        <span class="tag">Canva</span><span class="tag">CapCut</span><span class="tag">Picsart</span><span class="tag">Réseaux sociaux</span>
-      </div>
+      <div class="skill-name">Com. Digitale</div>
+      <div class="skill-desc">Contenu, storytelling, réseaux sociaux, community management.</div>
+      <div class="tags"><span class="tag">Canva</span><span class="tag">CapCut</span></div>
     </div>
     <div class="skill-card">
       <div class="skill-icon">📈</div>
-      <div class="skill-name">Prospection Commerciale</div>
-      <div class="skill-desc">Phoning, présentation de solutions adaptées, suivi de devis, relances et gestion des commandes clients.</div>
-      <div class="skill-tags">
-        <span class="tag">HubSpot</span><span class="tag">Négociation</span><span class="tag">Closing</span>
-      </div>
+      <div class="skill-name">Prospection</div>
+      <div class="skill-desc">Phoning, présentation, suivi devis, relances et commandes.</div>
+      <div class="tags"><span class="tag">HubSpot</span><span class="tag">B2B</span></div>
     </div>
     <div class="skill-card">
       <div class="skill-icon">📊</div>
-      <div class="skill-name">Analyse & Performance</div>
-      <div class="skill-desc">Suivi de KPIs, analyse d'engagement et de portée, optimisation de campagnes et reporting de performance.</div>
-      <div class="skill-tags">
-        <span class="tag">Google Analytics</span><span class="tag">Google Ads</span><span class="tag">Perplexity</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">🗂️</div>
-      <div class="skill-name">Organisation & Gestion</div>
-      <div class="skill-desc">Gestion de projets, coordination d'équipes, suivi logistique et événementiel à grande échelle.</div>
-      <div class="skill-tags">
-        <span class="tag">Microsoft 365</span><span class="tag">PowerPoint</span><span class="tag">Gestion de stocks</span>
-      </div>
+      <div class="skill-name">Analyse</div>
+      <div class="skill-desc">KPIs, engagement, optimisation de campagnes et reporting.</div>
+      <div class="tags"><span class="tag">Analytics</span><span class="tag">Ads</span></div>
     </div>
     <div class="skill-card">
       <div class="skill-icon">🤝</div>
       <div class="skill-name">Relation Client</div>
-      <div class="skill-desc">Écoute active, gestion des réclamations, orientation et satisfaction client — du B2B au B2C.</div>
-      <div class="skill-tags">
-        <span class="tag">Service client</span><span class="tag">Résolution conflits</span><span class="tag">Empathie</span>
-      </div>
+      <div class="skill-desc">Écoute active, gestion réclamations, satisfaction client B2B/B2C.</div>
+      <div class="tags"><span class="tag">Service</span><span class="tag">Empathie</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🗂️</div>
+      <div class="skill-name">Organisation</div>
+      <div class="skill-desc">Gestion de projets, coordination, suivi logistique et événementiel.</div>
+      <div class="tags"><span class="tag">Office 365</span><span class="tag">PPT</span></div>
     </div>
     <div class="skill-card">
       <div class="skill-icon">🌍</div>
-      <div class="skill-name">Adaptabilité Interculturelle</div>
-      <div class="skill-desc">Expérience professionnelle au Sénégal et en France, capacité à évoluer dans des contextes multiculturels et exigeants.</div>
-      <div class="skill-tags">
-        <span class="tag">Français C2</span><span class="tag">Anglais B1</span><span class="tag">Mobilité</span>
-      </div>
+      <div class="skill-name">Interculturel</div>
+      <div class="skill-desc">Expérience Sénégal & France, milieux multiculturels et exigeants.</div>
+      <div class="tags"><span class="tag">FR C2</span><span class="tag">EN B1</span></div>
     </div>
   </div>
 </section>
 
-<!-- Projects / Réalisations -->
+<!-- PROJECTS -->
 
 <section id="projects">
-  <div class="section-label reveal">Réalisations</div>
-  <h2 class="section-title reveal">Ce que j'ai<br><em>accompli</em></h2>
-  <div class="projects-grid reveal">
-    <div class="project-card">
-      <div class="project-card-bg"></div>
-      <div class="project-card-inner">
-        <div class="project-num">01</div>
-        <div class="project-company">Événementiel Paris · Juillet 2024</div>
-        <h3 class="project-title">Jeux Olympiques & Paralympiques Paris 2024</h3>
-        <p class="project-desc">Gestion de flux de plus de 500 spectateurs/jour, contrôle de billets numériques et résolution de litiges clients dans un environnement international sous haute pression.</p>
-        <div class="project-arrow">Voir détails →</div>
-      </div>
+  <div class="label">Réalisations</div>
+  <h2 class="section-title">Ce que j'ai <em>accompli</em></h2>
+  <div>
+    <div class="proj-card">
+      <div class="proj-num">01</div>
+      <div class="proj-company">Événementiel · Juillet 2024</div>
+      <div class="proj-title">Jeux Olympiques & Paralympiques Paris 2024</div>
+      <p class="proj-desc">Gestion de flux de plus de 500 spectateurs/jour, contrôle de billets numériques et résolution de litiges dans un contexte international sous haute pression.</p>
     </div>
-    <div class="project-card">
-      <div class="project-card-bg"></div>
-      <div class="project-card-inner">
-        <div class="project-num">02</div>
-        <div class="project-company">Ecotra SA · Dakar, Sénégal</div>
-        <h3 class="project-title">Développement commercial B2B</h3>
-        <p class="project-desc">Prospection téléphonique quotidienne, présentation de solutions sur-mesure, gestion complète du cycle de vente : devis, relances, commandes et fidélisation.</p>
-        <div class="project-arrow">Voir détails →</div>
-      </div>
+    <div class="proj-card">
+      <div class="proj-num">02</div>
+      <div class="proj-company">Ecotra SA · Dakar</div>
+      <div class="proj-title">Développement commercial B2B</div>
+      <p class="proj-desc">Prospection téléphonique quotidienne, présentation de solutions sur-mesure, gestion complète du cycle de vente : devis, relances, commandes et fidélisation.</p>
     </div>
-    <div class="project-card">
-      <div class="project-card-bg"></div>
-      <div class="project-card-inner">
-        <div class="project-num">03</div>
-        <div class="project-company">Ecotra SA · Dakar, Sénégal</div>
-        <h3 class="project-title">Stratégie Community Management</h3>
-        <p class="project-desc">Création et publication de contenus engageants, animation des communautés digitales, suivi des performances (engagement, portée, croissance) et analyse des retombées.</p>
-        <div class="project-arrow">Voir détails →</div>
-      </div>
+    <div class="proj-card">
+      <div class="proj-num">03</div>
+      <div class="proj-company">Ecotra SA · Dakar</div>
+      <div class="proj-title">Stratégie Community Management</div>
+      <p class="proj-desc">Création de contenus engageants, animation des communautés digitales, suivi des performances et analyse des retombées.</p>
     </div>
-    <div class="project-card">
-      <div class="project-card-bg"></div>
-      <div class="project-card-inner">
-        <div class="project-num">04</div>
-        <div class="project-company">Carrefour Distribution Paris · 2024</div>
-        <h3 class="project-title">Gestion retail & satisfaction client</h3>
-        <p class="project-desc">Accueil, encaissement et gestion des réclamations, réassort et suivi de 2 400 références produits, contribution à l'amélioration continue de l'expérience client.</p>
-        <div class="project-arrow">Voir détails →</div>
-      </div>
+    <div class="proj-card">
+      <div class="proj-num">04</div>
+      <div class="proj-company">Carrefour · Paris 2024</div>
+      <div class="proj-title">Gestion retail & satisfaction client</div>
+      <p class="proj-desc">Accueil, encaissement, gestion des réclamations, réassort et suivi de 2 400 références produits.</p>
     </div>
   </div>
 </section>
 
-<!-- Experience Timeline -->
+<!-- EXPERIENCE -->
 
 <section id="experience">
-  <div class="section-label reveal">Parcours</div>
-  <h2 class="section-title reveal">Mon <em>histoire</em><br>professionnelle</h2>
+  <div class="label">Parcours</div>
+  <h2 class="section-title">Mon <em>histoire</em> professionnelle</h2>
   <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">Décembre 2024 — Présent</div>
-      <div class="timeline-role">Employé Polyvalent</div>
-      <div class="timeline-company">Carrefour Distribution Paris, Île-de-France</div>
-      <ul class="timeline-bullets">
-        <li>Accueil et encaissement client avec gestion des réclamations quotidiennes</li>
-        <li>Réassort et suivi de stocks sur 2 400 références produits</li>
-        <li>Amélioration de la satisfaction client (gestion de 10+ clients simultanés)</li>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Décembre 2024 — Présent</div>
+      <div class="tl-role">Employé Polyvalent</div>
+      <div class="tl-company">Carrefour Distribution Paris</div>
+      <ul class="tl-bullets">
+        <li>Accueil et encaissement avec gestion des réclamations</li>
+        <li>Réassort et suivi de 2 400 références produits</li>
+        <li>Amélioration de la satisfaction client</li>
       </ul>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">Juillet 2024</div>
-      <div class="timeline-role">Opérateur de Contrôle d'Accès</div>
-      <div class="timeline-company">Événementiel Paris — Jeux Olympiques & Paralympiques</div>
-      <ul class="timeline-bullets">
-        <li>Accueil et orientation des spectateurs dans un contexte international</li>
-        <li>Contrôle de billets numériques et résolution de litiges</li>
-        <li>Gestion de flux de plus de 500 personnes par jour</li>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Juillet 2024</div>
+      <div class="tl-role">Opérateur Contrôle d'Accès</div>
+      <div class="tl-company">Paris — Jeux Olympiques & Paralympiques</div>
+      <ul class="tl-bullets">
+        <li>Accueil et orientation des spectateurs</li>
+        <li>Contrôle billets numériques, résolution de litiges</li>
+        <li>Gestion de flux de 500+ personnes/jour</li>
       </ul>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">Juin 2023</div>
-      <div class="timeline-role">Chargé de Développement Commercial</div>
-      <div class="timeline-company">Ecotra SA Services, Dakar — Sénégal</div>
-      <ul class="timeline-bullets">
-        <li>Prospection téléphonique quotidienne de nouveaux clients</li>
-        <li>Présentation de solutions adaptées aux besoins prospects</li>
-        <li>Gestion intégrale du cycle commercial : devis, relances, commandes</li>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Juin 2023</div>
+      <div class="tl-role">Chargé de Développement Commercial</div>
+      <div class="tl-company">Ecotra SA Services, Dakar</div>
+      <ul class="tl-bullets">
+        <li>Prospection téléphonique quotidienne</li>
+        <li>Présentation de solutions adaptées aux prospects</li>
+        <li>Gestion intégrale du cycle commercial</li>
       </ul>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">Juin 2022</div>
-      <div class="timeline-role">Community Manager</div>
-      <div class="timeline-company">Ecotra SA Services, Dakar — Sénégal</div>
-      <ul class="timeline-bullets">
-        <li>Création et publication de contenus sur les réseaux sociaux</li>
-        <li>Animation des communautés et gestion des messages clients</li>
-        <li>Suivi et analyse des performances des campagnes digitales</li>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Juin 2022</div>
+      <div class="tl-role">Community Manager</div>
+      <div class="tl-company">Ecotra SA Services, Dakar</div>
+      <ul class="tl-bullets">
+        <li>Création et publication de contenus</li>
+        <li>Animation des communautés en ligne</li>
+        <li>Suivi et analyse des performances digitales</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- Education -->
+<!-- EDUCATION -->
 
 <section id="education">
-  <div class="section-label reveal">Formation</div>
-  <h2 class="section-title reveal">Diplômes &<br><em>certifications</em></h2>
-  <div class="edu-grid reveal">
+  <div class="label">Formation</div>
+  <h2 class="section-title">Diplômes & <em>certifications</em></h2>
+  <div class="edu-grid">
     <div class="edu-card">
       <div class="edu-year">2026 – 2028 · En cours</div>
       <div class="edu-degree">MBA Manager de la Stratégie Commerciale</div>
-      <div class="edu-school">CFA IMC Alternance — Groupe Randstad, Saint-Denis</div>
-      <div class="edu-detail">Élaboration de stratégie commerciale, management, développement business. Rythme : 3 semaines entreprise / 1 semaine école.</div>
+      <div class="edu-school">CFA IMC Alternance — Groupe Randstad</div>
     </div>
     <div class="edu-card">
       <div class="edu-year">Jan. 2026 – Jan. 2027</div>
       <div class="edu-degree">Certification Google Ads</div>
       <div class="edu-school">Google Paris</div>
-      <div class="edu-detail">Optimisation de campagnes publicitaires, analyse des performances et stratégies d'enchères.</div>
     </div>
     <div class="edu-card">
       <div class="edu-year">Septembre 2023</div>
-      <div class="edu-degree">Bachelor Marketing & Commerce<br>Titre RNCP Niveau 6</div>
+      <div class="edu-degree">Bachelor Marketing & Commerce — Titre RNCP Niveau 6</div>
       <div class="edu-school">ESGCI Paris</div>
-      <div class="edu-detail">Responsable du Développement Commercial certifié. Techniques de prospection et négociation commerciale.</div>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
+<!-- CONTACT -->
 
 <section id="contact">
-  <div class="contact-wrap">
-    <div class="section-label reveal">Contact</div>
-    <h2 class="section-title reveal">Travaillons<br><em>ensemble</em></h2>
-    <div class="contact-grid reveal">
-      <div class="contact-info">
-        <p class="contact-subtitle">Je suis disponible pour une alternance à partir de septembre 2026. N'hésitez pas à me contacter pour discuter d'une opportunité.</p>
-        <div class="contact-item">
-          <div class="contact-item-icon">✉</div>
-          <div>
-            <div class="contact-item-label">Email</div>
-            <div class="contact-item-text">mksylla04@gmail.com</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">📱</div>
-          <div>
-            <div class="contact-item-label">Téléphone</div>
-            <div class="contact-item-text">+33 7 52 99 09 35</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">📍</div>
-          <div>
-            <div class="contact-item-label">Localisation</div>
-            <div class="contact-item-text">Noisy-le-Sec, Île-de-France</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">🎓</div>
-          <div>
-            <div class="contact-item-label">Disponibilité</div>
-            <div class="contact-item-text">Alternance dès septembre 2026</div>
-          </div>
-        </div>
-      </div>
-      <div class="contact-form">
-        <div class="form-group">
-          <label class="form-label">Votre nom</label>
-          <input class="form-input" type="text" placeholder="Jean Dupont">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Votre email</label>
-          <input class="form-input" type="email" placeholder="jean@entreprise.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Votre message</label>
-          <textarea class="form-textarea" placeholder="Bonjour Mamadou, nous avons une opportunité d'alternance…"></textarea>
-        </div>
-        <button class="btn-primary" style="width:fit-content;" onclick="alert('Merci ! Contactez directement mksylla04@gmail.com pour une réponse rapide.')">
-          Envoyer le message ↗
-        </button>
-      </div>
+  <div class="label">Contact</div>
+  <h2 class="section-title">Travaillons <em>ensemble</em></h2>
+  <div class="contact-items">
+    <div class="contact-item">
+      <div class="contact-icon">✉</div>
+      <div><div class="contact-lbl">Email</div><div class="contact-val">mksylla04@gmail.com</div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📱</div>
+      <div><div class="contact-lbl">Téléphone</div><div class="contact-val">+33 7 52 99 09 35</div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div><div class="contact-lbl">Localisation</div><div class="contact-val">Noisy-le-Sec, Île-de-France</div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🎓</div>
+      <div><div class="contact-lbl">Disponibilité</div><div class="contact-val">Alternance dès septembre 2026</div></div>
     </div>
   </div>
+  <div class="form">
+    <div><label class="form-lbl">Votre nom</label><input class="form-input" type="text" placeholder="Jean Dupont"></div>
+    <div><label class="form-lbl">Votre email</label><input class="form-input" type="email" placeholder="jean@entreprise.com"></div>
+    <div><label class="form-lbl">Votre message</label><textarea class="form-textarea" placeholder="Bonjour Mamadou…"></textarea></div>
+    <div><a href="mailto:mksylla04@gmail.com" class="btn-gold">Envoyer ↗</a></div>
+  </div>
 </section>
-
-<!-- Footer -->
 
 <footer>
   <a href="#hero" class="footer-logo">MK<span>S</span></a>
-  <div class="footer-copy">© 2026 Mamadou Khaly Sylla — Tous droits réservés</div>
-  <div class="footer-links">
-    <a href="mailto:mksylla04@gmail.com">Email</a>
-    <a href="tel:+33752990935">Téléphone</a>
-    <a href="#hero">Haut de page ↑</a>
-  </div>
+  <div class="footer-copy">© 2026 Mamadou Khaly Sylla</div>
 </footer>
-
-<script>
-// ── Custom cursor ──
-const cursor = document.getElementById('cursor');
-const follower = document.getElementById('cursorFollower');
-let mx = 0, my = 0, fx = 0, fy = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-function animateCursor() {
-  fx += (mx - fx) * 0.12; fy += (my - fy) * 0.12;
-  cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-  follower.style.left = fx + 'px'; follower.style.top = fy + 'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2.5)'; follower.style.opacity = '0.5'; });
-  el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; follower.style.opacity = '1'; });
-});
-
-// ── Nav scroll effect ──
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 80);
-});
-
-// ── Reveal on scroll ──
-const reveals = document.querySelectorAll('.reveal, .timeline-item');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 60);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-reveals.forEach(el => observer.observe(el));
-
-// ── Smooth scroll for anchor links ──
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-
-// ── Staggered skill cards ──
-document.querySelectorAll('.skill-card').forEach((card, i) => {
-  card.style.transitionDelay = (i * 0.06) + 's';
-});
-document.querySelectorAll('.edu-card').forEach((card, i) => {
-  card.style.transitionDelay = (i * 0.08) + 's';
-});
-
-// ── Print function ──
-function printPortfolio() { window.print(); }
-</script>
 
 </body>
 </html>
